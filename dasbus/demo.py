@@ -1,4 +1,4 @@
-import dasbus 
+from dasbus.connection import SessionMessageBus
 # dbus library in python 
 # system_bus = SystemMessageBus() # system bus init
 session_bus = SessionMessageBus() # Session Bus init
