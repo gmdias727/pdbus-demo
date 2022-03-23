@@ -1,0 +1,21 @@
+ _LEAF_CONSTRUCTORS = {
+        'b': GLib.Variant.new_boolean,
+        'y': GLib.Variant.new_byte,
+        'n': GLib.Variant.new_int16,
+        'q': GLib.Variant.new_uint16,
+        'i': GLib.Variant.new_int32,
+        'u': GLib.Variant.new_uint32,
+        'x': GLib.Variant.new_int64,
+        't': GLib.Variant.new_uint64,
+        'h': GLib.Variant.new_handle,
+        'd': GLib.Variant.new_double,
+        's': GLib.Variant.new_string,
+        'o': GLib.Variant.new_object_path,
+        'g': GLib.Variant.new_signature,
+        'v': GLib.Variant.new_variant,
+    }
+
+
+value = {'name': 'Ricardo', 'cor': 'verde', 'items': [...]}
+
+pydbus.Variant('o{s:s,s:s,s:a{i, i, i}}', value)
