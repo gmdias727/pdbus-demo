@@ -1,15 +1,15 @@
-from dasbus.connection import SessionMessageBus
-# dbus library in python 
-# system_bus = SystemMessageBus() # system bus init
+# DasBus Library 
+from dasbus.connection import SessionMessageBus, SystemMessageBus
+
+system_bus = SystemMessageBus() # system bus init
 session_bus = SessionMessageBus() # Session Bus init
-print(session_bus)
 
-# proxy = session_bus.get_proxy( # specify dbus service name and path
-#     "org.example.Chat",
-#     "/org/example/Chat/Rooms/3"
-# )
+proxy = session_bus.get_proxy( # specify dbus service name and path
+    "org.freedesktop.systemd1",
+    "/org/freedesktop/systemd1"
+)
 
-# print(proxy.Name) # get property of dbus proxy
+print(proxy.ListUnits()) # get property of dbus proxy
 
 # proxy.SendMessage("Hello World!") # call a method of the DBus proxy
 
