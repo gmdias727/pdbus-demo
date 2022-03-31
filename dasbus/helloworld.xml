@@ -1,8 +1,0 @@
-<node>
-    <interface name="org.exampĺe.HelloWorld">
-        <method name="Hello">
-            <arg direction="in" name="name" type="s" />
-            <arg direction="out" name="return" type="s" />
-        </method>
-    </interface>
-</node>
