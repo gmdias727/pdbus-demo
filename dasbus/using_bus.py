@@ -2,11 +2,16 @@ from dasbus.connection import SessionMessageBus
 bus = SessionMessageBus()
 
 proxy = bus.get_proxy(
-    "org.example.HelloWorld",
-    "/org/example/HelloWorld"
+    "org.example.Calculator",
+    "/org/example/Calculator"
 )
 
-print(proxy.Hello('fodase'))
-print(proxy.World(555555))
+print(proxy.Addition(123, 456))
+print(proxy.Subtraction(50, 256))
+print(proxy.Multiplication(77, 33))
+print(proxy.Division(800, 3))
 
-print(type(proxy.World(555555)))
+
+# print(proxy.World())
+
+# print(type(proxy.World(555555)))

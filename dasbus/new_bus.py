@@ -1,30 +1,39 @@
+from services.dolar import DolarHoje
+file_handler = open("/home/hansolo/a/pdbus-demo/dasbus/services/org.example.HelloWorld.xml", "r")
+
+xml = file_handler.read()
+# print(type(file_handler))
+# print(type(xml))
+
 from dasbus.loop import EventLoop
 loop = EventLoop()
 
 from dasbus.connection import SessionMessageBus
 session_bus = SessionMessageBus()
 
-class HelloWorld(object):
-    __dbus_xml__ = """
-    <node>
-        <interface name="org.example.HelloWorld">
-            <method name="Hello">
-                <arg direction="in" name="name" type="s" />
-                <arg direction="out" name="return" type="s" />
-            </method>
-            <method name="World">
-                <arg direction="in" name="num" type="i" />
-                <arg direction="out" name="return" type="i" />
-            </method>
-        </interface>
-    </node>
-    """
+class Calculator(object):
+    __dbus_xml__ = xml
 
-    def Hello(self, name):
-        return f"Hello {name}!"
-    def World(self, num):
-        return num
+    def Addition(self, value1, value2):
+        return value1 + value2
 
-session_bus.publish_object("/org/example/HelloWorld", HelloWorld()) 
-session_bus.register_service("org.example.HelloWorld")
+    def Subtraction(self, value1, value2):
+        return value1 - value2
+
+    def Multiplication(self, value1, value2):
+        return value1 * value2
+    
+    def Division(self, value1, value2):
+        return value1 / value2
+    def Dolar(self):
+        return DolarHoje()
+    
+
+session_bus.publish_object("/org/example/Calculator", Calculator())
+session_bus.register_service("org.example.Calculator")
+print('SERVIÇO DBUS RODANDO!')
+print('SERVIÇO DBUS RODANDO!')
+print('SERVIÇO DBUS RODANDO!')
+print('SERVIÇO DBUS RODANDO!')
+print('SERVIÇO DBUS RODANDO!')
 loop.run()
