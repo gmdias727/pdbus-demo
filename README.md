@@ -12,3 +12,5 @@ notification.py
 systemd.py
 nautilus.py
 ```
+
+Deletando venv
