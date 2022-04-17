@@ -1,4 +1,4 @@
-# DasBus Library 
+# DasBus Library
 from dasbus.connection import SystemMessageBus, SessionMessageBus
 
 
@@ -12,7 +12,7 @@ proxy = session_bus.get_proxy( # specify dbus service name and path
     "/org/freedesktop/systemd1"
 )
 
-print(proxy.ListUnits()) # get property of dbus proxy
+# print(proxy.ListUnits()) # get property of dbus proxy
 
 # proxy.SendMessage("Hello World!") # call a method of the DBus proxy
 
@@ -22,4 +22,3 @@ print(proxy.ListUnits()) # get property of dbus proxy
 # proxy.MessageReceived.connect(
 #     callback
 # )
-
