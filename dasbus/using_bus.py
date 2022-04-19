@@ -10,8 +10,3 @@ print(proxy.Addition(123, 456))
 print(proxy.Subtraction(50, 256))
 print(proxy.Multiplication(77, 33))
 print(proxy.Division(800, 3))
-
-
-# print(proxy.World())
-
-# print(type(proxy.World(555555)))

@@ -25,6 +25,7 @@ class Calculator(object):
     
     def Division(self, value1, value2):
         return value1 / value2
+    
     def Dolar(self):
         return DolarHoje()
     
